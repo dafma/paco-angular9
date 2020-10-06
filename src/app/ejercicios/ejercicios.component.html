@@ -1,0 +1,9 @@
+<h2>{{ejercicio.name}}</h2>
+<div> <span>id:</span> {{ejercicio.id}}
+
+  <div>
+    <label for="">nombre:
+      <input placeholder="name" [(ngModel)]="ejercicio.name" >
+    </label>
+  </div>
+<div> <span>nombre:</span>{{ejercicio.name| uppercase}}</div>

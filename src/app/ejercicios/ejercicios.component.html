@@ -1,9 +1,11 @@
-<h2>{{ejercicio.name}}</h2>
-<div> <span>id:</span> {{ejercicio.id}}
+<h2>Listado de Ejercicios</h2>
 
-  <div>
-    <label for="">nombre:
-      <input placeholder="name" [(ngModel)]="ejercicio.name" >
-    </label>
-  </div>
-<div> <span>nombre:</span>{{ejercicio.name| uppercase}}</div>
+<ul class="ejercicios">
+  <li *ngFor="let ejercicio of ejercicios" (click)="onSelectEjercicio(ejercicio)">
+    <span class="ejercicio">{{ejercicio.id}}</span>{{ejercicio.name}}
+  </li>
+
+<div *ngIf="ejercicioSeleccionado">
+    <h2>Detalle</h2>
+  <div><span>id:</span>{{ejercicioSeleccionado.id}}</div>
+</div>

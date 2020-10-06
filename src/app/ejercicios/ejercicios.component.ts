@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Ejercicio} from '../ejercicio';
+import {EJERCICIOS} from '../collection-ejercicio';
+
 
 @Component({
   selector: 'app-ejercicios',
@@ -8,14 +10,18 @@ import {Ejercicio} from '../ejercicio';
 })
 export class EjerciciosComponent implements OnInit {
 
-  ejercicio: Ejercicio = {
-    id: 1,
-    name: 'Flexiones'
-  };
+  ejercicios = EJERCICIOS;
+  ejercicioSeleccionado: Ejercicio;
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  onSelectEjercicio(ejercicio: Ejercicio): void{
+    console.log('Entro dentro de onSelectEjercicio=' + ejercicio.id);
+    this.ejercicioSeleccionado = ejercicio;
+  }
+
 
 }
